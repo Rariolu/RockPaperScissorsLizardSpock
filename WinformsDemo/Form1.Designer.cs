@@ -41,6 +41,9 @@
             this.rbAlwaysRock2 = new System.Windows.Forms.RadioButton();
             this.rbRandAI2 = new System.Windows.Forms.RadioButton();
             this.rbHuman2 = new System.Windows.Forms.RadioButton();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.itbRounds = new WinformsDemo.IntTextBox();
+            this.lblRounds = new System.Windows.Forms.Label();
             this.gbNames.SuspendLayout();
             this.gbPlayer1Type.SuspendLayout();
             this.gbPlayer2Type.SuspendLayout();
@@ -184,11 +187,41 @@
             this.rbHuman2.Text = "Human";
             this.rbHuman2.UseVisualStyleBackColor = true;
             // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(21, 294);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(123, 42);
+            this.btnStart.TabIndex = 3;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // itbRounds
+            // 
+            this.itbRounds.Location = new System.Drawing.Point(112, 268);
+            this.itbRounds.Name = "itbRounds";
+            this.itbRounds.Size = new System.Drawing.Size(100, 20);
+            this.itbRounds.TabIndex = 4;
+            this.itbRounds.Text = "5";
+            // 
+            // lblRounds
+            // 
+            this.lblRounds.AutoSize = true;
+            this.lblRounds.Location = new System.Drawing.Point(18, 268);
+            this.lblRounds.Name = "lblRounds";
+            this.lblRounds.Size = new System.Drawing.Size(47, 13);
+            this.lblRounds.TabIndex = 5;
+            this.lblRounds.Text = "Rounds:";
+            // 
             // RPSLSpWinformsDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 386);
+            this.ClientSize = new System.Drawing.Size(437, 350);
+            this.Controls.Add(this.lblRounds);
+            this.Controls.Add(this.itbRounds);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.gbPlayer2Type);
             this.Controls.Add(this.gbPlayer1Type);
             this.Controls.Add(this.gbNames);
@@ -201,6 +234,7 @@
             this.gbPlayer2Type.ResumeLayout(false);
             this.gbPlayer2Type.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -219,6 +253,9 @@
         private System.Windows.Forms.RadioButton rbAlwaysRock2;
         private System.Windows.Forms.RadioButton rbRandAI2;
         private System.Windows.Forms.RadioButton rbHuman2;
+        private System.Windows.Forms.Button btnStart;
+        private IntTextBox itbRounds;
+        private System.Windows.Forms.Label lblRounds;
     }
 }
 

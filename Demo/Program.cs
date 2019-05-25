@@ -20,6 +20,7 @@ namespace Demo
             do
             {
                 Game game = new Game(name1, name2, pt1, pt2);
+                int rounds = ParseInt("How many rounds would you like to play?");
                 game.PlayRounds(5);
                 Console.WriteLine("Press 'y' to do another. Press something else to exit.");
                 contine = Console.ReadKey().KeyChar;
@@ -27,9 +28,21 @@ namespace Demo
             while (contine == 'y');
             Console.WriteLine("Goodbye.");
         }
-        static string GetText(string query)
+        static int ParseInt(string query)
         {
-            Console.Write(query);
+            string t;
+            int val;
+            int i = 0;
+            do
+            {
+                t = GetText("{0} {1}",++i,query);
+            }
+            while (!int.TryParse(t, out val));
+            return val;
+        }
+        static string GetText(string query, params object[] args)
+        {
+            Console.Write(query,args);
             string t = Console.ReadLine();
             Console.WriteLine();
             return t;

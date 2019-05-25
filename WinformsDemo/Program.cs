@@ -15,7 +15,7 @@ namespace WinformsDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RPSLSpWinformsDemo());
+            Application.Run(RPSLSpWinformsDemo.Instance());
         }
     }
 }

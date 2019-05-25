@@ -12,10 +12,20 @@ namespace WinformsDemo
 {
     public partial class RPSLSpWinformsDemo : Form
     {
-        public RPSLSpWinformsDemo()
+        static RPSLSpWinformsDemo _instance;
+        public static RPSLSpWinformsDemo Instance()
+        {
+            if (_instance == null)
+            {
+                return _instance = new RPSLSpWinformsDemo();
+            }
+            return _instance;
+        }
+        private RPSLSpWinformsDemo()
         {
             InitializeComponent();
-            Console.WriteLine("{0} {1}", Player1Type, Player2Type);
+            Util.SetGestureRetrieval(GestureDialog.GetGestureFromDialog);
+            Util.StringOutput = WinformsUtil.MessageBoxShow;
         }
         public string Player1Name
         {
@@ -62,6 +72,11 @@ namespace WinformsDemo
                 //else
                 return PlayerType.AlwaysRock;
             }
+        }
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            Game game = new Game(Player1Name, Player2Name, Player1Type, Player2Type);
+            game.PlayRounds(itbRounds.Value);
         }
     }
 }

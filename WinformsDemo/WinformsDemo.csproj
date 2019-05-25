@@ -52,6 +52,9 @@
     <Compile Include="GestureDialog.Designer.cs">
       <DependentUpon>GestureDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="IntTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WinformsDemo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +63,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinformsUtil.cs" />
     <EmbeddedResource Include="GestureDialog.resx">
       <DependentUpon>GestureDialog.cs</DependentUpon>
     </EmbeddedResource>
